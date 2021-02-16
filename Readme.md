@@ -40,14 +40,14 @@ Item 3 and 4 are algorithms performed on arrays
 Each operation has its own specific Time and Space Complexity
 
 1. **Write** 
-    a. In an array with space - Insert, Update (at the end of an array or with indexing) - **O(1)** : Constant time
-    b. In a full array - This will require recreating another array with extra space and copying the content of the old array
+    * In an array with space - Insert, Update (at the end of an array or with indexing) - **O(1)** : Constant time
+    * In a full array - This will require recreating another array with extra space and copying the content of the old array
     into the new one before adding the new element - **O(N)**
     
     
 2. **Read** 
-    a. **O(1)** - with Indexing : Constant time
-    b. **O(N)** - without Indexing : Linear time
+    * **O(1)** - with Indexing : Constant time
+    * **O(N)** - without Indexing : Linear time
     
     
 3. **Sort** 
