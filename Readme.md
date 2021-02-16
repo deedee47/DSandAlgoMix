@@ -1,4 +1,4 @@
-#Data Structures and Algorithms in Computer Science
+# Data Structures and Algorithms in Computer Science
 This project shows the implementation of various algorithms as well 
 as relevant data structures.
 It explains : 
@@ -6,7 +6,7 @@ It explains :
 - When they can be used
 - How they can be used
 
-##Introduction
+## Introduction
 **Data Structures** are used for effective & efficient data organization and storage. Each has its strenghts and weaknesses.
 Data organization differs from one DS to another. A data structure may affect the output of your product 
 in general, hence it is important to know when and how to apply specific data structures.
@@ -23,42 +23,46 @@ Algorithms also affect the output of your product especially the relative time t
 
 
 
-##1. Arrays
+## 1. Arrays
 An array is a static data structure which holds homogenous data and can have variable length. It is not a dynamic DS.
 i.e it is created with a defined size which cannot be changed later in your program. The Memory allocated is just enough 
 for the array size specified.
 
-###Types of Arrays
+### Types of Arrays
 Arrays come in different types based on the dimension
 
 1. One Dimensional Array - Data is represented in a row
 2. Two Dimensional Array - This is known as array of arrays (Matrix). 
 3. MultiDimensional Array - Nested Arrays with >= 3 dimensions
 
-###Operations on Arrays
+### Operations on Arrays
 Item 3 and 4 are algorithms performed on arrays
 Each operation has its own specific Time and Space Complexity
 
-1. Write 
+1. **Write** 
     a. In an array with space - Insert, Update (at the end of an array or with indexing) - **O(1)** : Constant time
     b. In a full array - This will require recreating another array with extra space and copying the content of the old array
     into the new one before adding the new element - **O(N)**
-2. Read 
+    
+    
+2. **Read** 
     a. **O(1)** - with Indexing : Constant time
     b. **O(N)** - without Indexing : Linear time
-3. Sort 
+    
+    
+3. **Sort** 
 This involves arranging items in the array in either natural order or descending order. Sorts can be **stable or unstable**.
 A sort is stable if the natural order is preserved in the case of duplicate items. An unstable sort will not preserve the 
 order if duplicate items are present in an array.
 
-    * Bubble Sort : Simplest Sort Algorithm. It involves continuous swapping of elements (the current element and the next) if 
+    * **Bubble Sort** : Simplest Sort Algorithm. It involves continuous swapping of elements (the current element and the next) if 
     the order is misplaced while going through each element in the array. At the end of this process, the largest element is 
     at the end of the loop. This process is repeated (without considering the already sorted element(s) at the end of the array)
     hence partitioning it into a sorted partition and unsorted partition. It is an in-place sort algorithm.
     
     Runtime Complexity - O(N2) : Stable Sort
      
-    * Selection Sort :  This involves swapping the largest element in the array to the end of the array on every traversal 
+    * **Selection Sort** :  This involves swapping the largest element in the array to the end of the array on every traversal 
     through the array until it becomes sorted. It also requires that the array is partitioned into sorted and unsorted
     areas. the largest element ends up at the end of the array. An index is maintained in the process i.e the index of the 
     highest item in the array while looping through. If you encounter a higher item, the index is updated. Once you reach the end
@@ -73,10 +77,10 @@ order if duplicate items are present in an array.
     * Quick Sort
     
     
-4. Search 
+4. **Search** 
 
-###Advantages
+### Advantages of Arrays
 1. It takes constant time to find an element in an array given the specific index.
 
-###Disadvantages
+### Disadvantages of Arrays
 1. Searching without the use of the array index is expensive. O(N)
