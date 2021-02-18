@@ -40,4 +40,23 @@ public class ArrayAlgosTest {
     {
         Assert.assertArrayEquals(arrayAlgos.selectionSortDesc() , testArrayDesc);
     }
+
+    //-------------Insertion Sort---------------------------------------------
+    @Test
+    public void InsertionSortAsc()
+    {
+        Assert.assertArrayEquals(arrayAlgos.insertionSort() , testArrayAsc);
+    }
+    @Test
+    public void InsertionSortDesc()
+    {
+        Assert.assertArrayEquals(arrayAlgos.insertionSortDesc() , testArrayDesc);
+    }
+
+    //-------------Shell Sort---------------------------------------------
+    @Test
+    public void ShellSortAsc()
+    {
+        Assert.assertArrayEquals(arrayAlgos.shellSort() , testArrayAsc);
+    }
 }

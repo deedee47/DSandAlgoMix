@@ -36,7 +36,7 @@ Arrays come in different types based on the dimension
 3. MultiDimensional Array - Nested Arrays with >= 3 dimensions
 
 ### Operations on Arrays
-Item 3 and 4 are algorithms performed on arrays
+Item 3 and 4 are algorithms performed on arrays. 
 Each operation has its own specific Time and Space Complexity
 
 1. **Write** 
@@ -67,12 +67,35 @@ order if duplicate items are present in an array.
     areas. the largest element ends up at the end of the array. An index is maintained in the process i.e the index of the 
     highest item in the array while looping through. If you encounter a higher item, the index is updated. Once you reach the end
     of the loop, you swap the item at the end of the array (minding the sorted partition) with the item in the stored index.
-    
     It does not swap as much as Bubble sort.
     
     Runtime Complexity - O(N2) : Unstable Sort
     
-    * Insertion Sort
+    * **Insertion Sort** : This is another in-place algorithm which required splitting the array into sorted and unsorted
+    partitions. It starts off by assuming the first item in the array is in its sorted position, and the second to last items
+    are in the unsorted partition. It requires looping through the unsorted partition, comparing each item with the sorted 
+    partition in order to find the exact slot to insert the unsorted item. This means that items in the sorted partition are 
+    moved to the right in other to make room for the new item.
+    
+    Runtime Complexity - O(N2) : Stable Sort
+    
+    This algorithm will require multiple swaps if the smallest number is at the end of the array.
+    
+    * **Shell Sort** : This is a variation of Insertion sort in order to cut down on the time it takes to sort the array (i.e
+    the number of shifts required in the process.) This algorithm uses a "gap value" to perform the insertion of the element 
+    instead of comparing it with its immediate neighbour(s) step by step. For example, if the gap value is 3, you compare the item
+    with its third neighbour (swap where necessary, and continue the process for the rest of the elements) until you hit 
+    the end of the array.
+    
+    As the algorithm continues, the gap value reduces until it becomes 1. The last iteration with the gap value of 1 is the
+    normal insertion sort.
+    
+    There are many ways to get the gap value. This implementation uses (array.length/2 to calculate the gap value on every 
+    iteration.
+     
+    Runtime Complexity - Variable : Unstable Sort
+    
+    
     * Merge Sort
     * Quick Sort
     
