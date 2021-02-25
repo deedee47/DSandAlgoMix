@@ -94,10 +94,19 @@ order if duplicate items are present in an array.
     iteration.
      
     Runtime Complexity - Variable : Unstable Sort
+     
+    * **Merge Sort** : This sort algorithm requires splitting an array into smaller sections and merging them back into a sorted
+    array. The sorting process happens during the merge. The splitting phase is executed by dividing the array into 2 sub arrays.
+    Each sub array is further divided into 2 and the process continues until you have a 1 element sub array across. The 
+    merging phase is executed by comparing elements in sub arrays and re-positioning them in a sorted fashion. The merge happens
+    from the single element array until the entire array is reformed.
     
+    It is mostly implemented using recursion. It is not an in-place sort algorithm, temporary arrays are created to hold the
+    sorted elements during the merge.
     
-    * Merge Sort
-    * Quick Sort
+    Runtime Complexity - O(N Log N) : Stable Sort
+    
+    * **Quick Sort** : 
     
     
 4. **Search** 

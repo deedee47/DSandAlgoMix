@@ -187,6 +187,68 @@ public class ArrayAlgos {
     }
 
 
+    //-------------------Merge Sort------------------------------
+    public int[] mergeSort()
+    {
+        int[] initialArr = {21, 1, 4, 2, 10, 3, 6, 15};
+        System.out.println("Initial Array : " + arrayToString(initialArr));
+
+        int arrSize = initialArr.length;
+        mergeSplit(initialArr, 0, arrSize);
+
+        System.out.println("Array after Merge Sort : " + arrayToString(initialArr));
+
+        return initialArr;
+    }
+    private void mergeSplit(int[] array, int startIndex, int endIndex)
+    {
+        //this will only happen when you have your single element sub array, end the recursion here;
+        if((endIndex-startIndex) < 2) return;
+
+        int midPoint = (startIndex+endIndex)/2; //get the midpoint to divide the given array into two
+        mergeSplit(array, startIndex, midPoint); //split left half, the partition is 1 higher than the count
+        mergeSplit(array, midPoint, endIndex); //split right half till you get to single element array;
+        merge(array, startIndex, midPoint, endIndex);
+
+    }
+    private void merge(int[] array, int startIndex, int midPoint, int endIndex)
+    {
+        //condition to stop the recursion; it means the array is sorted
+        //compare right and left partitions
+        //midPoint is the start of the right partition; midPoint - 1 is the end of the left partition
+        if (array[midPoint-1] <= array[midPoint]) return;
+
+        int i = startIndex; //this is the starting cursor to go through the left partition
+        int j = midPoint; //this is the starting cursor to go through the right partition
+
+        //we compare items in the left array with the right array to determine the sort position
+        //and then write the correct sorted elements into the temporary array
+
+        int[] temp = new int[endIndex-startIndex];
+        int tempIndex = 0;
+        //we create a temp array big enough to accommodate elements from left and right partitions
+        //the temp index shows the position we're at while inserting values into the temp array
+
+        //loop go through each index to cover both partitions
+        while(i < midPoint && j < endIndex)
+        {
+            temp[tempIndex++] = (array[i] <= array[j]) ? array[i++] : array[j++];
+            //this compares items in both partitions and copies them to temp array
+        }
+
+        //if there are elements remaining in the left array, we copy them to the temp array
+        //if there are elements left in the right array, we do nothing
+
+        //source array, start position in source, destination array, start position in destination,No of elements to copy
+        int leftOvers = midPoint - i;
+        System.arraycopy(array, i, temp, tempIndex, leftOvers);
+
+        //copy temp array back to original array
+        //the number of items to copy is tempIndex plus whatever was leftOvers we had earlier in the left array
+        System.arraycopy(temp, 0, array, startIndex, tempIndex+leftOvers);
+
+
+    }
 
     //------------------Privates-------------------------------------
     private void swap(int[] array, int index1, int index2)

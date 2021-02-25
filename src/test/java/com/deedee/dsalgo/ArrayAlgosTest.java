@@ -59,4 +59,11 @@ public class ArrayAlgosTest {
     {
         Assert.assertArrayEquals(arrayAlgos.shellSort() , testArrayAsc);
     }
+
+    //-------------Merge Sort---------------------------------------------
+    @Test
+    public void MergeSortAsc()
+    {
+        Assert.assertArrayEquals(arrayAlgos.mergeSort() , testArrayAsc);
+    }
 }
