@@ -106,8 +106,36 @@ order if duplicate items are present in an array.
     
     Runtime Complexity - O(N Log N) : Stable Sort
     
-    * **Quick Sort** : 
+    * **Quick Sort** : This is another divide and conquer algorithm that takes a pivot element. It puts everything less than the 
+    pivot on the left and all elements greater than the pivot on the right while moving indexes from each end of the array until
+    they meet. The final meeting point of these indexes will be the position of the pivot. By doing so, the pivot ends up in its
+    sorted position. This process is repeated for the left and right side of the pivot. Finally, the array will be sorted since all
+    pivots end up in their sorted position. This is an inplace algorithm. The selection of the pivot can affect the time the 
+    algorithm takes to execute.
     
+    Runtime Complexity - O(N Log N) : Unstable Sort
+    
+    * **Counting Sort** : This algorithm requires counting the occurences of elements in an array and using it to reform the array
+    in a sorted manner. It assumes that the elements in the array are within a specific range of values. Therefore, it does uses 
+    only distinct data types (no negatives, no floats, mostly whole numbers). It is picky on data types. However, the benefits 
+    of using this method is seen if the values in the array is closer to the length of the array. For e.g an array of size 10
+    has elements between 1 to 10. The counting sort creates another array with the size of the highest number in the assumed range
+    and places the number of occurence for each element in the relate position in the new array. As in the example, all counts of
+    value 1 will be in the first position of the new array.
+    
+    Runtime Complexity : O(N) : Unstable Sort
+    
+    * **Radix Sort** : This algorithm also makes assumptions about the data it is trying to sort. Elements must be of the same 
+    radix (i.e unique data sequence, digits have radix of 10 which is 0-9, alphabets have radix of 26 a-z, binary has 2, 0-1) 
+    and width (i.e number of characters in the number or word. 1236 has width of 4, hello has width of 5). It does not work with
+    decimals or any data type that is not compliant with the regular radix system. It is a stable sort because the stability helps
+    to ensure that the final sort is correct. 
+    
+    The process involves analysing and sorting elements based on each digit or character in the same position. In a number system,
+    all numbers in the units position is analysed, then tens, the hundreds, then thousands etc (from right to left) until you 
+    get to the leftmost digit. At the end of the process, the array is sorted.
+     
+    Runtime Complexity : O(N) - O(N Log N) : Stable Sort
     
 4. **Search** 
 
@@ -116,3 +144,28 @@ order if duplicate items are present in an array.
 
 ### Disadvantages of Arrays
 1. Searching without the use of the array index is expensive. O(N)
+
+
+## 2. Lists
+The List is an Abstract Data Type - not exactly a concrete data structure. This means that an Interface is involved where other 
+data structures inherit from. Data is ordered sequentially in Lists. There are many structures that implement the List interface.
+Some examples are : 
+
+### a. ArrayList
+This is a resizable array hence it can be extended and reduced at will. In contrast to a regular array, once created with an 
+initial capacity, it cannot be modified, a new array has to be created. An ArrayList hass options of creating an object without 
+a capacity (defaults to 10) or with capacity. Indexing is also 0-based just like arrays.
+
+#### Advantages of Arraylist
+* The arrayList is good for random access provided the index is given O(1). This happens in constant time. 
+* It is also good for iterating through the elements in the list
+* Adding items at the end of the list also performs in constant time.
+
+#### Disadvantages of Arraylist
+* Searching without an index is expensive - o(N)
+* Inserting elements in a specific location is also expensive. This requires a result shift in other elements of accommodate 
+the new entry.
+* Removal also requires shifts to close the gap caused by deleting an element.
+
+
+

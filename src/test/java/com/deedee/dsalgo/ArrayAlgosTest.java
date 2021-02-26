@@ -59,11 +59,47 @@ public class ArrayAlgosTest {
     {
         Assert.assertArrayEquals(arrayAlgos.shellSort() , testArrayAsc);
     }
+    @Test
+    public void ShellSortDesc()
+    {
+        Assert.assertArrayEquals(arrayAlgos.shellSortDesc() , testArrayDesc);
+    }
+
 
     //-------------Merge Sort---------------------------------------------
     @Test
     public void MergeSortAsc()
     {
         Assert.assertArrayEquals(arrayAlgos.mergeSort() , testArrayAsc);
+    }
+    @Test
+    public void MergeSortDesc()
+    {
+        Assert.assertArrayEquals(arrayAlgos.mergeSortDesc() , testArrayDesc);
+    }
+
+    //-------------Quick Sort---------------------------------------------
+    @Test
+    public void QuickSortAsc()
+    {
+        Assert.assertArrayEquals(arrayAlgos.quickSort() , testArrayAsc);
+    }
+    @Test
+    public void QuickSortDesc()
+    {
+        Assert.assertArrayEquals(arrayAlgos.quickSortDesc() , testArrayDesc);
+    }
+
+
+    //-------------Counting Sort---------------------------------------------
+    @Test
+    public void CountingSortAsc()
+    {
+        Assert.assertArrayEquals(arrayAlgos.countingSort() , new int[] {1, 2, 3, 4, 6, 8, 10, 10});
+    }
+    @Test
+    public void CountingSortDesc()
+    {
+        Assert.assertArrayEquals(arrayAlgos.countingSortDesc() , new int[] {10, 10, 8, 6, 4, 3, 2, 1});
     }
 }
