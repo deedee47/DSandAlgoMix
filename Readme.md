@@ -144,10 +144,10 @@ the order if duplicate items are present in an array.
     
 4. **Search** 
 
-### Advantages of Arrays
+#### Advantages of Arrays
 1. It takes constant time to find an element in an array given the specific index.
 
-### Disadvantages of Arrays
+#### Disadvantages of Arrays
 1. Searching without the use of the array index is expensive. O(N)
 
 
@@ -222,6 +222,36 @@ the links of the previous element.
 
 
 ## 3. Stacks
+A stack is a DS that stores data in a linear fashion. However it is known for its LIFO (Last In, First Out) nature.
+This means that elements are added and removed from only one end of the stack. There is no random access in stacks, that
+means the only accessible item is the item at the top of the stack.
+
+### Stack Operations
+* Pop - Removes elements
+* Push - Inserts elements
+* Peek - Views elemenets
+
+A stack may be implemented using other data structures like arrays,  linkedlist (singly) or other variations of lists
+such as Vectors and Arraylists (although they are backed by arrays). A linkedlist is a more ideal implementation, 
+however if there is memory constraints, an array (or lists backed by arrays) might work best considering it does not 
+have to store the extra information of the next element.
+
+Runtime Complexity - with Arrays : O(N) - items will be readjusted if array is full (worst case)
+Runtime Complexity - with LinkedList : O(1) - it takes constant time to remove or add to the linked list, and it grows 
+dynamically.
+
+The Stack Class in Java is implemented using a Vector hence poses the ame limitations as an array. JavaDocs also 
+recommend using Classes that implement the Deque interface to work with stack. It has all operations of a stace. 
+LinkedList implements the Deque interface hence it is easy to use a linkedlist as a stack. It is also possible to 
+recreate your implementation to only have the stack operations.
+
+The LinkedList in Java is a doubly linkedList, hence if memory is a constraint, it is possible to create your 
+implementation of a singly linked list and use that instead.
+
+
+## 4. Queues
+A queue is a DS which also stores data in a linear fashion but uses the FIFO strategy.
+
 
 
 
