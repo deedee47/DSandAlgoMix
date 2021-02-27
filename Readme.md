@@ -250,7 +250,31 @@ implementation of a singly linked list and use that instead.
 
 
 ## 4. Queues
-A queue is a DS which also stores data in a linear fashion but uses the FIFO strategy.
+A queue is a DS which also stores data in a line-up fashion but uses the FIFO (First In First Out) strategy. Both ends 
+of the queue are open. Data is pushed in to the queue from the end but is removed from the front i.e removed in the 
+same order in which they were entered. Like stacks, a queue can also be implemented using other data structures like 
+Arrays and LinkedLists.
+
+#### Queue Operations
+* add - Enqueue - Insert data
+* remove - Dequeue - Remove data
+* element - View data
+
+In the Java implementation for Queues, there are 3 other operations which do not throw exceptions when operating on an 
+empty queue. They return null or the respective boolean value where necessary. They are :
+
+* offer - Insert data
+* poll - remove data
+* peek - view data
+
+**Circular Queues** utilize the empty spaces in the queue while observing its FIFO strategy. Once the pointer in the 
+ queue has reached the end, it circles back to the head of the queue to continue only if there are empty spaces. This is
+ mostly used in cases where there is constant addition and removal from the queue, hence it seldom gets full.
+ 
+
+## 5. HashTables
+
+ 
 
 
 
