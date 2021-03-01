@@ -353,10 +353,24 @@ level, it moves from left to right.
 ### b. Heaps
 A heap (or binary heap) is a special type of binary tree (has at most 2 children). It is a **complete binary tree** 
 that satisfies the heap property. The heap property is defined in one of 2 folds
-* Max Heap : This requires that the value in every parent is greater or equal to the value in its child(ren)
-* Min Heap : This requires that the value in every parent is less than or equal to the value in its child(ren)
+* Max Heap : This requires that the value in every parent is greater or equal to the value in its child(ren). The 
+maximum value is at the root of the tree.
+* Min Heap : This requires that the value in every parent is less than or equal to the value in its child(ren). The 
+minimum value is at the root of the tree.
 
-This heap is backed by arrays.
+This heap is backed/implemented using arrays. Heapify is the process of converting a binary tree into a heap. During
+insertions or deletions, it is possible to cause the tree to violate the heap property. Hence it is necessary to heapify
+to restore the order.
+
+In the JDK, the **Priority Queue** structure uses the min heap implementation. FIFO strategy (as normal with queues)
+does not occur in this queue. The item in the queue with the highest priority is taken off the queue first. The min
+heap helps to always heep highest value at the end of the heap. It is not synchronized. PriorityBlockingQueue is 
+another option for using it in a synchronized enviroenment.
+
+#### Heap Sort
+In a max heap, move highest value to the end of the array -> heapify (excluding the last element - this brings the next
+highest element to the front of the heap) -> repeat. The final result is a sorted heap
+
 
 
 

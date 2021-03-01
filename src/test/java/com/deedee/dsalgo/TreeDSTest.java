@@ -1,5 +1,6 @@
 package com.deedee.dsalgo;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -14,6 +15,6 @@ public class TreeDSTest {
     @Test
     public void BinarySearchTreeTest()
     {
-        treeDS.aboutBinarySearchTrees();
+        Assert.assertEquals(treeDS.aboutBinarySearchTrees().max() ,32);
     }
 }
