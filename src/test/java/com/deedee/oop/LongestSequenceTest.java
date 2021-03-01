@@ -20,5 +20,6 @@ public class LongestSequenceTest {
         Assert.assertEquals(longestSequence.findLongestSequence("longest sEquence"), 8);
         Assert.assertEquals(longestSequence.findLongestSequence("long"), 4);
         Assert.assertFalse(longestSequence.findLongestSequence("longest sEquence") != 8);
+        Assert.assertTrue(longestSequence.findLongestSequence("blah blah blah blah") == 5);
     }
 }

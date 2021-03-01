@@ -143,6 +143,28 @@ the order if duplicate items are present in an array.
     Runtime Complexity : O(N) - O(N Log N) : Stable Sort
     
 4. **Search** 
+It is usually required to find items in data structures hence there are a number of algorithms used to achieve this.
+Most popular examples are : 
+
+    * **Linear (Sequencial) Search** : This process involves going through each element array in order to find an item. 
+     Runtime Complexity : O(N) 
+    
+    * **Binary Search** : This algorithm uses a "divide-and-conquer" approach to find an element. It does not consider all
+    the elements in the array. This search pattern requires that the array is sorted in other to get the best out of 
+    it. It uses the midpoint of a sorted array as a pivot and decides which side of the pivot is greater or less than or 
+    equal the item in question. It chooses the lower side and repeats the process until the item is found. If the pivot
+    is the number, there is no need to keep searching.
+    
+    This algorithm can be performed recursively or iteratively
+    
+    Runtime Complexity : O(Log N) 
+    
+Other examples of search algorithms are : 
+    * Knuth Morris Pratt Pattern Search
+    * Jump Search
+    * Interpolation Search
+    * Exponential Search
+    * Fibonacci Search
 
 #### Advantages of Arrays
 1. It takes constant time to find an element in an array given the specific index.
@@ -264,8 +286,8 @@ In the Java implementation for Queues, there are 3 other operations which do not
 empty queue. They return null or the respective boolean value where necessary. They are :
 
 * offer - Insert data
-* poll - remove data
-* peek - view data
+* poll - Remove data
+* peek - View data
 
 **Circular Queues** utilize the empty spaces in the queue while observing its FIFO strategy. Once the pointer in the 
  queue has reached the end, it circles back to the head of the queue to continue only if there are empty spaces. This is
@@ -273,8 +295,71 @@ empty queue. They return null or the respective boolean value where necessary. T
  
 
 ## 5. HashTables
+This structure uses a Key-Value pair system to store and retrieve data. Keys are unique references to the values being 
+stored. A value is easily retrieved once the key is known. It supports any data type. The key is hashed and used as an 
+index to the value. Hashing is the process of converting/encrypting keys into specific data formats. A hash function is
+used to perform hashing.
 
- 
+In the Java JDK, a number of structures use the HastTable strategy and they broadly implement the Map Interface. This 
+means that they work with key-value pairs and have a HashTable underlying. Another popular 
+structure which uses the Map interface is the HashMap. HashTable in Java is synchronized and does not allow null keys 
+or values.
+
+**HashMap** is a non synchronized structure which stores Key-Value pairs of data. It basically uses a HashTable. The 
+hashMap accepts unique keys only. Duplicate keys replace the content of the map. HashMaps allow only one null key and 
+many null values.
+
+## 6. Trees
+A Tree is a Hierarchical Data Structure which stores data 
+Every circle in a tree is called a **Node**. A node is a single representation for data. It can also have child(ren) 
+node(s). Each node can also have ONE **Parent** except the root node. A tree has only one **Root Node**. A **Leaf Node** 
+is one that has no child(ren). A tree with only one node is called a **Singleton**. The link between each node is called
+an **Edge**. A **Sub-Tree** is a selected node and all its descendants. A **Path** is the sequence of nodes required
+to go from one node to another. Cycles (cyclic paths) are not allowed when traversing through the tree. A node can 
+only be used once in a traversal/path. A **Root Path** is the path from any node traces from the selected node to the 
+root node. The **Depth of a Node** is the number of edges from the root to the node. The **Height of a Node** is the 
+**longest path** from the node to a connected leaf. Leaf nodes have a height of zero by default. The height of a tree is
+the height of the root node. The **Level** of the tree is where nodes are at the same depth. An **Ancestor** of a node
+is all older nodes in the path of a selected node. A node can have multiple anscestors.
+
+Trees are ideal for sub items or descendant items i.e having hierarchical relationships. 
+
+### Binary Trees
+A Binary Tree is a tree which has 0, 1, or 2 children (at most 2) - called Left Child, Right Child. A binary tree is 
+said to be **Complete** if every level is filled up (except the last level - and most nodes on the last level are 
+left-sided). A **Full** binary tree is a tree where all the nodes (except leaf nodes) have 2 children.
+
+### a. Binary Search Trees
+A binary search tree is **an ordered binary tree**. It is popular for this characteristic hence it performs insert,
+delete and search faster than a regular binary tree. For the tree to have a sorted nature, the left child always has a
+lower value than the parent and the right child has a higher value than the parent. This means that everything to the 
+left of the root/parent is lower than the root/parent and vice versa for the right side. This makes it easier to berform
+binary search on such a tree. The **minimum** value can be easily identified by following the left path from root to 
+leaf (minimum item) and vice versa for the **maximum** value.
+
+Runtime Complexity : O(Log N) - for all operations
+
+#### Binary Tree Traversal Types
+* Pre-Order : This process visits the root-left-right of every subtree first starting from the Top Root.
+
+* Post-Order : This process visits the root of every subtree last starting from the leaf. left-right-root.
+
+* In-Order : This process visits the left-root-right child of subtrees all the way to the root. The result of an 
+in-order traversal is a sorted list of values 
+
+* Level : This process visits nodes on each level of the tree in order starting from the root (Level 0) and in each 
+level, it moves from left to right.
+
+### b. Heaps
+A heap (or binary heap) is a special type of binary tree (has at most 2 children). It is a **complete binary tree** 
+that satisfies the heap property. The heap property is defined in one of 2 folds
+* Max Heap : This requires that the value in every parent is greater or equal to the value in its child(ren)
+* Min Heap : This requires that the value in every parent is less than or equal to the value in its child(ren)
+
+This heap is backed by arrays.
+
+
+
 
 
 

@@ -102,4 +102,26 @@ public class ArrayAlgosTest {
     {
         Assert.assertArrayEquals(arrayAlgos.countingSortDesc() , new int[] {10, 10, 8, 6, 4, 3, 2, 1});
     }
+
+
+    ///-------------------------SEARCH----------------------------------------
+    @Test
+    public void LinearSearchTest()
+    {
+        Assert.assertTrue(arrayAlgos.linearSearch(3) ==  5);
+    }
+
+    @Test
+    public void BinarySearchIterativeTest()
+    {
+        Assert.assertTrue(arrayAlgos.binarySearchIterative(3) ==  2);
+        Assert.assertTrue(arrayAlgos.binarySearchIterative(11) ==  -1);
+    }
+    @Test
+    public void BinarySearchRecursiveTest()
+    {
+        Assert.assertTrue(arrayAlgos.binarySearchRecursive(3) ==  2);
+        Assert.assertTrue(arrayAlgos.binarySearchRecursive(21) ==  7);
+        Assert.assertTrue(arrayAlgos.binarySearchRecursive(11) ==  -1);
+    }
 }

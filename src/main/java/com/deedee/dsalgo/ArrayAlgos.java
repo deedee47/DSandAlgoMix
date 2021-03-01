@@ -478,22 +478,6 @@ public class ArrayAlgos {
         return  array;
     }
 
-
-
-    //-------------------Radix Sort------------------------------
-//    public int[] radixSort()
-//    {
-//        int[] initialArr = {1456, 8763, 2364, 7836, 4449, 5887};
-//        System.out.println("Initial Array : " + arrayToString(initialArr));
-//
-//        initialArr = countSort(initialArr, 1, 10);
-//
-//        System.out.println("Array after Radix Sort (ASC): " + arrayToString(initialArr));
-//
-//        return initialArr;
-//    }
-
-
     //------------------Privates-------------------------------------
     private void swap(int[] array, int index1, int index2)
     {
@@ -512,5 +496,72 @@ public class ArrayAlgos {
              result = (i == 0) ? result += arr[i] : result + ", " + arr[i];
         }
         return result;
+    }
+
+
+
+    /*
+        -------------------------START SEARCH----------------------------------------------------------
+     */
+    public int linearSearch(int elementToFind)
+    {
+        int[] initialArr = {20, 1, 4, 2, 10, 3, 6, 8};
+        for(int index = 0; index < initialArr.length ; index++)
+        {
+            if (initialArr[index] == elementToFind) return index;
+        }
+        return -1;
+    }
+
+    public int binarySearchIterative(int elementToFind)
+    {
+        int[] initialArr = new int[]{1, 2, 3, 4, 6, 10, 15, 21};
+        int startIndex = 0;
+        int endIndex = initialArr.length;
+
+        while (startIndex < endIndex)
+        {
+            int midPoint = (startIndex + endIndex)/2;
+            if(initialArr[midPoint] == elementToFind)
+            {
+                return midPoint;
+            }else if(initialArr[midPoint] > elementToFind)
+            {
+                endIndex = midPoint;
+            }
+            else
+            {
+                startIndex = midPoint + 1;
+            }
+        }
+        return -1;
+    }
+
+    public int binarySearchRecursive(int elementToFind)
+    {
+        int[] initialArr = new int[]{1, 2, 3, 4, 6, 10, 15, 21};
+        int startIndex = 0;
+        int endIndex = initialArr.length;
+
+        return binarySearch(initialArr, elementToFind, startIndex, endIndex);
+    }
+
+    private int binarySearch(int[] array, int elementToFind, int startIndex, int endIndex)
+    {
+        if(startIndex >= endIndex) return -1;
+
+        int midPoint = (startIndex + endIndex)/2;
+        if(array[midPoint] == elementToFind)
+        {
+            return midPoint;
+        }
+        else if(array[midPoint] > elementToFind)
+        {
+            return binarySearch(array, elementToFind, startIndex,midPoint);
+        }
+        else
+        {
+            return binarySearch(array, elementToFind, midPoint + 1,endIndex);
+        }
     }
 }
